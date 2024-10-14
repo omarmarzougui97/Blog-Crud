@@ -6,7 +6,9 @@ exports.createBlog = async (req, res) => {
     console.log(req.body);
     try {
         const {image, title, description} = req.body;
-        console.log(req.body);
+        //console.log(req.body);
+        //const image = req.file ? req.file.path : null;
+        //console.log(image);
         const newBlog = new Blog({image, title, description});
         await newBlog.save();
         res.status(201).json({message: "Blog created successfully."});
